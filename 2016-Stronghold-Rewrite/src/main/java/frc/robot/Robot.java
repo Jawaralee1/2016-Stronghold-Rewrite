@@ -5,11 +5,13 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.io.hdw_io.IO;
 import frc.robot.io.joysticks.JS_IO;
 import frc.robot.subsystem.drive.Drive;
+import frc.robot.subsystem.ReadSwitches;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.DigitalOutput;
 import java.nio.channels.Channel;
@@ -83,12 +85,7 @@ public class Robot extends TimedRobot {
     }
   }
 
-  public static DigitalInput bottomSwitch = new DigitalInput(0);
-  public static DigitalOutput redLed = new DigitalOutput(3);
-  public static DigitalInput middleSwitch = new DigitalInput(1);
-  public static DigitalOutput blueLed = new DigitalOutput(4);
-  public static DigitalInput upperSwitch = new DigitalInput(2);
-  public static DigitalOutput yellowLed = new DigitalOutput(5);
+  
 
   /** This function is called once when teleop is enabled. */
   @Override
@@ -105,8 +102,7 @@ public class Robot extends TimedRobot {
 
     SmartDashboard.putNumber("JS/Left", JS_IO.gamePad.getRawAxis(1));
     SmartDashboard.putNumber("JS/Right", JS_IO.gamePad.getRawAxis(5));
-    frc.robot.io.hdw_io.ReadSwitches.update();
-
+    ReadSwitches.update();
   }
 
   /** This function is called once when the robot is disabled. */

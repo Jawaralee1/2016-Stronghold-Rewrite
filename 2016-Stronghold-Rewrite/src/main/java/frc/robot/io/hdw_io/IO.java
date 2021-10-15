@@ -2,11 +2,14 @@ package frc.robot.io.hdw_io;
 
 import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.Relay;
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.I2C;
 import edu.wpi.first.wpilibj.PWM;
 import edu.wpi.first.wpilibj.PWMSpeedController;
 import edu.wpi.first.wpilibj.AnalogPotentiometer;
 import edu.wpi.first.wpilibj.Counter;
+import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
@@ -31,7 +34,12 @@ public class IO {
     public static PWM rightDrv = new PWM(1); // Cmds right wheels
     //public static DifferentialDrive diffDrv = new DifferentialDrive(leftDrv, leftDrv);
     
-
+    public static DigitalInput bottomSwitch = new DigitalInput(0);
+    public static Solenoid redLed = new Solenoid(6);
+    public static DigitalInput middleSwitch = new DigitalInput(1);
+    public static Solenoid blueLed = new Solenoid(0);
+    public static DigitalInput upperSwitch = new DigitalInput(2);
+    public static Solenoid yellowLed = new Solenoid(7);
 
     // Snorfler
     // public static Victor snorfFeedMain = new Victor(9);
